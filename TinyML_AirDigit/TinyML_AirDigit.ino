@@ -4,7 +4,7 @@
 #include "x_test.h"
 
 #define N_INPUTS  90
-#define N_OUTPUTS 10
+#define N_OUTPUTS 3
 // preallocate a certain amount of memory for input, output, and intermediate arrays.
 #define TENSOR_ARENA_SIZE 16*1024 
 
@@ -18,7 +18,7 @@ void setup() {
 }
 
 void loop() { 
-    float y_pred[10] ={0};
+    float y_pred[3] ={0};
 
     uint32_t lastTime = micros(); 
     
@@ -30,7 +30,7 @@ void loop() {
     Serial.print(inferTime);
     Serial.println(" us");
 
-    for (int i=0; i<10;i++) {
+    for (int i=0; i<3;i++) {
       Serial.print(y_pred[i]);
       Serial.print(i==9 ? '\n' : ',');
     }
